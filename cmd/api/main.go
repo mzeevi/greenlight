@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"github.com/mzeevi/greenlight/internal/data"
 	"github.com/mzeevi/greenlight/internal/mailer"
+	"github.com/mzeevi/greenlight/internal/vcs"
 	"log/slog"
 	"os"
 	"runtime"
@@ -18,7 +19,9 @@ import (
 	_ "github.com/lib/pq"
 )
 
-const version = "1.0.0"
+var (
+	version = vcs.Version()
+)
 
 type config struct {
 	port int
